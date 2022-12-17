@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="../main.js"></script>
+    <link rel="stylesheet" href="../styles.css"></link>
+    <title>Roulette</title>
+</head>
+<body>
+    <h1>ROULETTE FANTASY</h1>
+    <div id="roulette">
+        <h2 id="rolled-num">Rolled Number:</h2>
+    </div>
+    <table>
+        <tr id="row-1">
+            <td rowspan="3" class="number blank">0</td>
+            <td class="number odd red row-1">3</td>
+            <td class="number even black row-1">6</td>
+            <td class="number odd red row-1">9</td>
+            <td class="number even red row-1">12</td>
+            <td class="number odd black row-1">15</td>
+            <td class="number even red row-1">18</td>
+            <td class="number odd red row-1">21</td>
+            <td class="number even black row-1">24</td>
+            <td class="number odd red row-1">27</td>
+            <td class="number even red row-1">30</td>
+            <td class="number odd black row-1">33</td>
+            <td class="number even red row-1">36</td>
+            <td class="row-1-bet blank row-1">2to1</td>
+        </tr>
+        <tr id="row-2">
+            <td class="number black">2</td>
+            <td class="number red">5</td>
+            <td class="number black">8</td>
+            <td class="number black">11</td>
+            <td class="number red">14</td>
+            <td class="number black">17</td>
+            <td class="number black">20</td>
+            <td class="number red">23</td>
+            <td class="number black">26</td>
+            <td class="number black">29</td>
+            <td class="number red">32</td>
+            <td class="number black">35</td>
+            <td class="row-2-bet blank">2to1</td>
+        </tr>
+        <tr id="row-3">
+            <td class="number red">1</td>
+            <td class="number black">4</td>
+            <td class="number red">7</td>
+            <td class="number black">10</td>
+            <td class="number black">13</td>
+            <td class="number red">16</td>
+            <td class="number red">19</td>
+            <td class="number black">22</td>
+            <td class="number red">25</td>
+            <td class="number black">28</td>
+            <td class="number black">31</td>
+            <td class="number red">34</td>
+            <td class="row-3-bet blank">2to1</td>
+        </tr>
+        <tr id="split-rows">
+            <td rowspan="3" class="number blank">00</td>
+            <td colspan="4" class="first-twelve blank">1ST 12</td>
+            <td colspan="4" class="second-twelve blank">2ND 12</td>
+            <td colspan="4" class="third-twelve blank">3RD 12</td>
+        </tr>
+        <tr>
+            <td colspan="2" class="first-half blank">1 TO 18</td>
+            <td colspan="2" class="main-even blank">EVEN</td>
+            <td colspan="2" class="main-red">RED</td>
+            <td colspan="2" class="main-black">BLACK</td>
+            <td colspan="2" class="main-odd blank">ODD</td>
+            <td colspan="2" class="second-half blank">19 TO 36</td>
+        </tr>
+        <tr></tr>
+    </table>
+    <div id="input-bar">
+        <p id="bet-selected">Your current choice is:</p>
+        
+        <button id="place-bet">Place Bet</button>
+        <input id="bet-amount" type="number" placeholder="Bet Amount">
+        <p id="funds">Funds: 0.00$</p>
+        <button id="deposit">Deposit</button>
+        <input id="deposit-amount" type="number" placeholder="Deposit Amount">
+    </div>
+</body>
+</html>
