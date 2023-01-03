@@ -129,7 +129,6 @@ placeBet.addEventListener('click',function(evt){
             player.funds = player.funds + parseFloat(wagerValue);
             currentResult.innerHTML = "Congratulations, You Win! " + wagerValue + "$ have been added to your funds."
         } else if (choice == firstRow || choice == secondRow || choice == thirdRow || choice == firstTwelve || choice == secondTwelve || choice == thirdTwelve){
-            console.log('second if')
             player.funds = player.funds + 2*parseFloat(wagerValue);
             currentResult.innerHTML = "Congratulations, You Win! " + 2*wagerValue + "$ have been added to your funds."
         } else if (choice == num){
