@@ -140,10 +140,9 @@ placeBet.addEventListener('click',function(evt){
         player.funds = player.funds - parseFloat(wagerValue);
         currentResult.innerHTML = "You Lose!"
     }
-    console.log(player.funds)
     funds.innerHTML = "Funds: " + parseFloat(player.funds).toFixed(2) + "$";
     }
     choice = [];
-    choiceShow.innerHTML = "Your current choice is: "
+    choiceShow.innerHTML = "Please make a choice in the table above."
 })
 
