@@ -23,4 +23,4 @@ This is a simple browser-based casino roulette simulator. It is written in vanil
     
     (Multiplier of 2 means you will double your bet amount in case of a win)
     
-    Click the following link to launch the game: https://arjonkotte.github.io/Roulette-Fantasy/
+Click the following link to launch the game: https://arjonkotte.github.io/Roulette-Fantasy/
