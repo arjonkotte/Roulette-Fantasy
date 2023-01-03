@@ -1,20 +1,28 @@
 body {
-    background-color: grey;
+    background-color: greenyellow;
 }
 
 h1 {
-    background-color: darkgreen;
+    background-color: green;
     display: flex;
     justify-content: center;
+    border: solid;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
 }
 
 table {
     border: 3px solid;
-    width: 1000px;
+    width: 90vw;
     height: 300px;
     background-color: green;
-    margin-top: 25vh;
+    margin-top: 5vh;
     margin-left: 5vw;
+    margin-right: 5vw;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
@@ -60,11 +68,13 @@ td {
     font-size: 35px;
 }
 
+#input-bar>p {
+    text-decoration: underline;
+}
+
 .row1-bet:hover>.row-1{
     background-color: rgb(140, 165, 30);
 }
-
-
 
 #place-bet, #bet-amount, #funds, #deposit, #deposit-amount {
     font-size: 35px;

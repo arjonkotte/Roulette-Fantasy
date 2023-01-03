@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="../main.js"></script>
-    <link rel="stylesheet" href="../styles.css"></link>
+    <script defer src="scripts/main.js"></script>
+    <link rel="stylesheet" href="styles/styles.css"></link>
     <title>Roulette</title>
 </head>
 <body>
     <h1>ROULETTE FANTASY</h1>
-    <div id="roulette">
-        <h2 id="rolled-num">Rolled Number:</h2>
-    </div>
+    
+    <h2 id="rolled-num">Rolled Number:</h2>
+    
     <table>
         <tr id="row-1">
             <td rowspan="3" class="number blank">0</td>
@@ -77,10 +77,10 @@
         <tr></tr>
     </table>
     <div id="input-bar">
-        <p id="bet-selected">Your current choice is:</p>
-        
+        <p id="bet-selected">Your current choice is:</p>    
         <button id="place-bet">Place Bet</button>
         <input id="bet-amount" type="number" placeholder="Bet Amount">
+        <p id="result"></p>
         <p id="funds">Funds: 0.00$</p>
         <button id="deposit">Deposit</button>
         <input id="deposit-amount" type="number" placeholder="Deposit Amount">

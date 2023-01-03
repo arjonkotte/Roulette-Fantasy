@@ -31,14 +31,15 @@ while (i<numbers.length){
 // get DOM elements
 
 const placeBet = document.querySelector("#place-bet");
-const rolledNum = document.querySelector("#rolled-num")
-const wager = document.querySelector("#bet-amount")
-const funds = document.querySelector("#funds")
-const depositBtn = document.querySelector("#deposit")
-const deposit = document.querySelector("#deposit-amount")
-const table = document.querySelector("table")
-const choiceShow = document.querySelector("#bet-selected")
-const cellEl = document.querySelector("td")
+const rolledNum = document.querySelector("#rolled-num");
+const wager = document.querySelector("#bet-amount");
+const funds = document.querySelector("#funds");
+const depositBtn = document.querySelector("#deposit");
+const deposit = document.querySelector("#deposit-amount");
+const table = document.querySelector("table");
+const choiceShow = document.querySelector("#bet-selected");
+const cellEl = document.querySelector("td");
+const currentResult = document.querySelector("#result");
 
 
 function rollRoulette(numbers){
@@ -50,10 +51,13 @@ function rollRoulette(numbers){
 depositBtn.addEventListener('click',function(evt){
     
     if (deposit.value != false){
-    depositamt = deposit.value;
-    player.funds = player.funds + parseFloat(depositamt);
-    funds.innerHTML = "Funds: " + player.funds + "$";
-    deposit.value = '';
+        if (deposit.value >0){
+        player.funds = player.funds + parseFloat(deposit.value);
+        funds.innerHTML = "Funds: " + parseFloat(player.funds).toFixed(2) + "$";
+        deposit.value = '';
+        } else{
+
+        }
     }
 })
 
@@ -111,21 +115,33 @@ table.addEventListener("click",function(evt){
 
 // place bet
 placeBet.addEventListener('click',function(evt){
-    wagerValue = parseFloat(wager.value)
+    wagerValue = parseFloat(wager.value).toFixed(2)
     if(player.funds < wagerValue) {
-        funds.innerHTML = "Funds: " + player.funds + "$" + "  DEPOSIT MORE FUNDS!"
+        funds.innerHTML = "Funds: " + player.funds + "$" + "  Deposit more funds!"
     }
     
     if (wager.value != false && choice != 0 && player.funds >= wagerValue ){
     num = rollRoulette(numbers);
     rolledNum.innerHTML = "Rolled Number: " + num;
-
-    if(choice.includes(num)){
-        player.funds = player.funds + wagerValue;
+    
+    if (choice.includes(num)){
+        if(choice == redNum || choice == blackNum || choice == odd || choice == even || choice == firstHalf || choice == secondHalf){
+            player.funds = player.funds + parseFloat(wagerValue);
+            currentResult.innerHTML = "Congratulations, You Win! " + wagerValue + "$ have been added to your funds."
+        } else if (choice == firstRow || choice == secondRow || choice == thirdRow || choice == firstTwelve || choice == secondTwelve || choice == thirdTwelve){
+            console.log('second if')
+            player.funds = player.funds + 2*parseFloat(wagerValue);
+            currentResult.innerHTML = "Congratulations, You Win! " + 2*wagerValue + "$ have been added to your funds."
+        } else if (choice == num){
+            player.funds = player.funds + 35*parseFloat(wagerValue);
+            currentResult.innerHTML = "Congratulations, You Win! " + 35*wagerValue + "$ have been added to your funds."
+        } 
     } else {
-        player.funds = player.funds - wagerValue;
+        player.funds = player.funds - parseFloat(wagerValue);
+        currentResult.innerHTML = "You Lose!"
     }
-    funds.innerHTML = "Funds: " + player.funds + "$";
+    console.log(player.funds)
+    funds.innerHTML = "Funds: " + parseFloat(player.funds).toFixed(2) + "$";
     }
     choice = [];
     choiceShow.innerHTML = "Your current choice is: "
